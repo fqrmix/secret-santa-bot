@@ -1,6 +1,6 @@
 import asyncio
 from aiogram import Bot, Dispatcher
-from handlers import pollanswer
+from handlers import pollanswer, generation
 from dotenv import load_dotenv
 import os
 
@@ -12,10 +12,10 @@ async def main():
     dp = Dispatcher()
 
     dp.include_router(pollanswer.router)
+    dp.include_router(generation.router)
 
     await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot)
-
 
 if __name__ == "__main__":
     asyncio.run(main())
