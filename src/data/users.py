@@ -2,7 +2,7 @@ import json
 
 class Answers:
     def __init__(self) -> None:
-        self.file_path = "src\\data\\answers.json"
+        self.file_path = "src/data/answers.json"
         with open(self.file_path, "r", encoding='utf-8-sig') as file:
             self.json_input = json.load(file)
             print(self.json_input)
